@@ -1,8 +1,9 @@
-Bootstrap_Blogger
-=================
+Blogger layout for my blog
+==========================
 
-A simple two-column blog layout with custom navigation, header, and type. 
+This template is a fork of Bootstrap_Blogger (see http://getbootstrap.com/examples/blog/)
+for my blog.
+You can see it here:
 
-http://getbootstrap.com/examples/blog/
+https://asmaier.blogspot.de/
 
-Build with Blogger.

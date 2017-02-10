@@ -6,7 +6,8 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <title><data:blog.pageTitle/></title>
 <b:include data='blog' name='all-head-content'/>
-
+<link href='//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic' rel='stylesheet' type='text/css'/>
+  <link href='//fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'/>
 <!-- Latest compiled and minified CSS -->
   <link href='//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css' rel='stylesheet'/>
 
@@ -21,8 +22,11 @@
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+  font-family: 'Crimson Text', serif;
+  font-size: 22px;
+/*color: #555;*/
+  color: #121212;
+  background: #FDFDFD;
 }
 
 h1, .h1,
@@ -31,10 +35,20 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
-  font-weight: normal;
-  color: #333;
+  font-family: 'Crimson Text', serif;
+/*font-weight: normal;*/
+/*color: #333;*/
+    color: #121212;
   margin-top: 0;
+  font-weight:600;
+  font-style:italic;
+}
+
+h4, .h4 {
+
+  font-size: 30px;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 
 
@@ -42,11 +56,11 @@ h6, .h6 {
  * Override Bootstrap's default container.
  */
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   .container {
     width: 970px;
   }
-}
+}*/
 
 
 /*
@@ -106,12 +120,21 @@ h6, .h6 {
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: normal;
+  font-style: normal;
 }
 .blog-description {
   font-size: 20px;
   color: #999;
+}
+.widget-content {
+  margin-bottom: 10px;
+}
+.widget-content ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
 }
 .widget-item-control {
   display: none
@@ -124,7 +147,7 @@ h6, .h6 {
  */
 
 .blog-main {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.5;
 }
 
@@ -171,8 +194,17 @@ h6, .h6 {
   font-size: 40px;
 }
 .blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+/*margin-bottom: 20px;*/
+/* color: #999;*/
+  text-transform: uppercase;
+  font-family: Raleway, Calibri, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #787878;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid #dedede;
+  padding: 5px 0px;
 }
 
 /* Comments */
@@ -313,7 +345,7 @@ h6, .h6 {
 <body expr:class='&quot;loading&quot;  + data:blog.mobileClass +  &quot; &quot;  + data:blog.pageType'>
 
 <b:section class='blog-masthead' id='blog-masthead'>
-  <b:widget id='PageList1' locked='false' title='Seiten' type='PageList'>
+  <b:widget id='PageList1' locked='false' title='Seiten' type='PageList' version='1' visible='true'>
     <b:includable id='main'>
   <div class='widget-content'>
  <div class='container'>
@@ -332,12 +364,59 @@ h6, .h6 {
   </div>
 </b:includable>
   </b:widget>
+  <b:widget id='LinkList8' locked='true' title='Edit This Menu' type='LinkList' visible='true'>
+    <b:includable id='main'>
+ <div class='widget-content'>
+   <ul class='menunbt' id='nbtbotmenuul'>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+   <b:include name='quickedit'/>
+ </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' visible='true'>
+    <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d15525201\x26blogName\x3dModus+Maierandi\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://asmaier.blogspot.com/search\x26blogLocale\x3dde\x26v\x3d2\x26homepageUrl\x3dhttps://asmaier.blogspot.com/\x26vt\x3d-9169502289622793129&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
+</b:includable>
+  </b:widget>
 </b:section>
 
 <div class='container'>
 
 <b:section class='blog-header' id='blog-header'>
-  <b:widget id='Header1' locked='false' title='Blogger - Bootstrap (Header)' type='Header'>
+  <b:widget id='Header1' locked='false' title='Modus Maierandi (Header)' type='Header' version='1' visible='true'>
     <b:includable id='main'>
 <h1 class='blog-title'><b:include name='title'/></h1>
 </b:includable>
@@ -357,7 +436,7 @@ h6, .h6 {
      <div class='col-sm-8 blog-main'>
 
 <b:section class='main' id='main'>
-  <b:widget id='Blog1' locked='false' title='Blogposts' type='Blog'>
+  <b:widget id='Blog1' locked='false' title='Blogposts' type='Blog' version='1' visible='true'>
     <b:includable id='main' var='top'>
 
 <!-- posts -->
@@ -933,30 +1012,183 @@ h6, .h6 {
 <div class='col-sm-3 col-sm-offset-1 blog-sidebar'>
 
           <b:section class='sidebar-module' id='blog-sidebar'>
-            <b:widget id='HTML2' locked='false' title='' type='HTML'>
+            <b:widget id='BlogSearch1' locked='false' title='' type='BlogSearch' visible='true'>
               <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
+    <!-- only display title if it's non-empty -->
+    <b:if cond='data:title != &quot;&quot;'>
+      <h2 class='title'><data:title/></h2>
+    </b:if>
+
+    <div class='widget-content'>
+      <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
+        <form class='gsc-search-box' expr:action='data:blog.searchUrl'>
+          <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
+            <tbody>
+              <tr>
+                <td class='gsc-input'>
+                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='10' title='search' type='text'/>
+                </td>
+                <td class='gsc-search-button'>
+                  <input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <b:include name='quickedit'/>
+  </b:includable>
+            </b:widget>
+            <b:widget id='BlogArchive1' locked='false' title='Archiv' type='BlogArchive' visible='true'>
+              <b:includable id='main'>
+  <b:if cond='data:title'>
+    <h2><data:title/></h2>
   </b:if>
   <div class='widget-content'>
-    <data:content/>
+  <div id='ArchiveList'>
+  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+    <b:if cond='data:style == &quot;HIERARCHY&quot;'>
+     <b:include data='data' name='interval'/>
+    </b:if>
+    <b:if cond='data:style == &quot;FLAT&quot;'>
+      <b:include data='data' name='flat'/>
+    </b:if>
+    <b:if cond='data:style == &quot;MENU&quot;'>
+      <b:include data='data' name='menu'/>
+    </b:if>
   </div>
-
+  </div>
   <b:include name='quickedit'/>
+  </div>
+</b:includable>
+              <b:includable id='flat' var='data'>
+  <ul class='flat'>
+    <b:loop values='data:data' var='i'>
+      <li class='archivedate'>
+        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+              <b:includable id='interval' var='intervalData'>
+  <b:loop values='data:intervalData' var='i'>
+      <ul class='hierarchy'>
+        <li expr:class='&quot;archivedate &quot; + data:i.expclass'>
+          <b:include data='i' name='toggle'/>
+          <a class='post-count-link' expr:href='data:i.url'><data:i.name/></a>
+            <span class='post-count' dir='ltr'>(<data:i.post-count/>)</span>
+          <b:if cond='data:i.data'>
+            <b:include data='i.data' name='interval'/>
+          </b:if>
+          <b:if cond='data:i.posts'>
+            <b:include data='i.posts' name='posts'/>
+          </b:if>
+        </li>
+      </ul>
+  </b:loop>
+</b:includable>
+              <b:includable id='menu' var='data'>
+  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
+    <option value=''><data:title/></option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+    </b:loop>
+  </select>
+</b:includable>
+              <b:includable id='posts' var='posts'>
+  <ul class='posts'>
+    <b:loop values='data:posts' var='i'>
+      <li><a expr:href='data:i.url'><data:i.title/></a></li>
+    </b:loop>
+  </ul>
+</b:includable>
+              <b:includable id='toggle' var='interval'>
+  <b:if cond='data:interval.toggleId'>
+  <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+    <a class='toggle' href='javascript:void(0)'>
+      <span class='zippy toggle-open'>&#9660;&#160;</span>
+    </a>
+  <b:else/>
+    <a class='toggle' href='javascript:void(0)'>
+      <span class='zippy'>
+        <b:if cond='data:blog.languageDirection == &quot;rtl&quot;'>
+          &#9668;&#160;
+        <b:else/>
+          &#9658;&#160;
+        </b:if>
+      </span>
+    </a>
+  </b:if>
+ </b:if>
 </b:includable>
             </b:widget>
-            <b:widget id='HTML1' locked='false' title='' type='HTML'>
+            <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts' visible='true'>
               <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
+  <b:if cond='data:title'><h2><data:title/></h2></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <li>
+        <b:if cond='data:showThumbnails == &quot;false&quot;'>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (3) Show only thumbnails -->
+            <div class='item-thumbnail-only'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href' target='_blank'>
+                    <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            </div>
+            <div style='clear: both;'/>
+          <b:else/>
+            <!-- (4) Show snippets and thumbnails -->
+            <div class='item-content'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href' target='_blank'>
+                    <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+              <div class='item-snippet'><data:post.snippet/></div>
+            </div>
+            <div style='clear: both;'/>
+          </b:if>
+        </b:if>
+      </li>
+      </b:loop>
+    </ul>
+    <b:include name='quickedit'/>
   </div>
+</b:includable>
+            </b:widget>
+            <b:widget id='LinkList1' locked='false' title='Links' type='LinkList' visible='true'>
+              <b:includable id='main'>
 
-  <b:include name='quickedit'/>
+<b:if cond='data:title'><h2><data:title/></h2></b:if>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+   <b:include name='quickedit'/>
+ </div>
 </b:includable>
             </b:widget>
           </b:section>
